@@ -1,10 +1,11 @@
+using Global_Systems;
 using UnityEngine;
 
 namespace Enemies
 {
     public class EnemyMovement : MonoBehaviour
     {
-        public float speed = 5f;
+        [SerializeField] private float speed = 5f;
         private int _wavePointIndex;
 
         private void Start()
@@ -14,7 +15,7 @@ namespace Enemies
 
         private void Update()
         {
-            Vector3 dir = WaypointPath.Waypoints[_wavePointIndex].position - transform.position;
+            var dir = WaypointPath.Waypoints[_wavePointIndex].position - transform.position;
             transform.Translate(dir.normalized * (speed * Time.deltaTime), Space.World);
 
             if (Vector3.Distance(transform.position, WaypointPath.Waypoints[_wavePointIndex].position) <= 0.2f)
@@ -28,6 +29,8 @@ namespace Enemies
             if (_wavePointIndex >= WaypointPath.Waypoints.Length - 1)
             {
                 //End of the path
+                PlayerStats.Lives--;
+                
                 Destroy(gameObject);
                 return;
             }
