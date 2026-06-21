@@ -1,0 +1,41 @@
+# =============== #
+# Unity Ignored   #
+# =============== #
+/[L|l]ibrary/
+/[L|l]ocal[C|c]ache/
+/[S|s]erialization[C|c]ache/
+/[O|o]bj/
+/[B|b]uild/
+/[B|b]uilds/
+/[L|l]ogs/
+/[U|u]ser[S|s]ettings/
+/[T|t]emp/
+
+# Memory dumps
+*.log
+*.pidb
+*.seed
+*.unitypackage
+
+# ============== #
+# Visual Studio  #
+# ============== #
+.vs/
+*.user
+*.userosscache
+*.sln
+*.csproj
+*.unityproj
+*.suo
+*.userprefs
+*.pidb
+*.ipch
+*.dgspec.json
+/artifacts/
+
+# ==================== #
+# OS / IDE Temporary   #
+# ==================== #
+.DS_Store
+Thumbs.db
+Desktop.ini
